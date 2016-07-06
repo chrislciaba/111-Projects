@@ -1,0 +1,8 @@
+Christian Ciabattoni
+004331063
+
+The only weird thing that happens with this program is that when the exit
+command is executed by the shell, one other key must be pressed before both
+client and server exit. Additionally, when the shell exits because of a read
+error on the server side, it sends a SIGINT to the child process so it can exit
+without weird things happening.

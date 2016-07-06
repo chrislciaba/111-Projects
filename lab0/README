@@ -1,0 +1,41 @@
+OVERVIEW
+--------
+
+This project was fairly straightforward. The file lab0.c uses a variety
+of system calls,  all of which were either taught to us in discussion
+(1C) or were found from the linux man pages.
+
+DESCRIPTION OF lab0.c
+---------------------
+
+lab0.c uses the getopt_long function in order to first get all of the options
+from the command line. For the --input=<filename> and --output=<filename>
+options, the program tries to use open() or creat() to open or create files
+with the specified filenames. If it fails, it uses perror() to report an error
+and then exits with the appropriate error codes. Otherwise, it changes the
+file descriptors to 0 or 1 respectively wusing the dup2() function. Then it
+reads in the appropriate input from file descriptor 0 and writes the output to
+file descriptor 1. If input is missing, the program simply reads from stdin and
+if the output is missing, it writes to stdout. For --segfault, the program sets
+a pointer equal to null and then tries to dereference it and set it equal to
+a value. The --catch option uses the signal() function to create a new
+handler for the SIGSEGV signal with a custom error message and exits with the
+appropriate error code.
+
+DESCRIPTION OF Makefile
+-----------------------
+
+The Makefile implements all of the behavior defined within the spec. The only
+thing that the spec didn't specify was what was meant by the 'smoke test' for
+make check, so my program creates an input file, runs the lab0 executable
+with defined input and output files, and then does a diff on both of them
+to see if they are the same.
+
+DESCRIPTION OF SCREENSHOTS
+--------------------------
+
+screenshot1.png contains the image showing the backtrace (answer to Q5).
+screenshot2.png contains the image showing the point where the pointer is set
+to NULL, then stepping one instruction to the bad assignement, then inspecting
+the pointer to show that it's null and also that accessing the dereferenced
+pointer is not possible.

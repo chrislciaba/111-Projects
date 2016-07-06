@@ -1,0 +1,15 @@
+The included files are (other than this document) the Makefile containing
+all of the desired implementation and the C program named lab1a.c. There
+are no limitations regarding the program, however, it is important to note
+that the status from the shell will print three different messages depending on
+if it exited because of a signal, because the shell exited normally, or some
+other abnormal behavior not caught previously. In order to view the exit code
+of the parent process can be viewed with the command
+
+echo $?
+
+After the program runs. Also I'm not entirely sure why, but when I do the ls
+command instead of printing everything in one line with spaces in between it
+adds newlines between each of the files. Additionally, when hitting Ctrl-C and
+after the exit command, the program needs an extra key to be pushed before it
+exits. 

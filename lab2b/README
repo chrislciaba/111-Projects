@@ -1,0 +1,40 @@
+Christian Ciabattoni
+004331063
+
+----DESCRIPTION OF FILES------
+lab2b.c:
+This file contains everything that gets all of the options, runs the threads,
+etc. One note about this program is that it usually segfaults when running the
+insert/delete operations without any guards in place, as it performs a check to
+see if the next pointer is null before deleting an item, which results in a
+segfault sometimes because if multiple deletes run simultaneously, then one can
+delete the item that we were given at the beginning of the delete function
+which results in us trying to use a null pointer to get the next ponter. I ran
+this with gdb roughly 15x and this is always where things went wrong.
+
+SortedList.h:
+I didn't change anything here
+
+SortedList.c:
+All of the desired functions from SortedList.h are implemented here.
+
+-----QUESTIONS--------
+2B.1A:
+The reason we see a curve with this shape (i.e. the time per op increasing
+after a certain point) is because as the list gets longer, it takes longer
+to traverse. This algorithm is O(n) not O(1) because we want a sorted list.
+Therefore it takes longer to access/add/delete elements in the list the
+larger it gets.
+
+2B.1B:
+The way we could correct this effect is by dividing the time per operation
+by the number of items currently in the list (maybe by n/2 since that would
+be the average).
+
+2B.2A:
+The difference in time per operations comes from the fact that the critical
+section in the linked list (2B) is much longer than the one in the adder (2A),
+as a result, the locks are held much longer with the linked list than the
+adder, the probability of a conflict arising within the linked list is higher
+than in the adder for the same number of threads, and that conflict will result
+in more blocking which inhibits parallelism.

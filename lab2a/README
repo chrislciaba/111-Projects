@@ -1,0 +1,40 @@
+Christian Ciabattoni
+004331063
+
+-----DESCRIPTION-----
+All of the included files implement the desired behavior the same way that was
+specified in the spec. The only thing that needed to be done was the
+CAS locking mechanism uses its own add function since otherwise it wouldn't
+work properly.
+
+----ANSWERS------
+2A.2A:
+The reason the average cost drops with increasing iterations is that the
+overhead involved in thread creation is a much larger portion of the run time
+with a low number of iterations than with a higher number.
+
+2A.2B:
+The correct cost could be calculated by increasing the number of operations to
+infinity since the overhead added by thread creation would approach 0.
+
+2A.2C:
+Because every time an add operation is called, midway through the thread the
+operation relinquishes the CPU and gets moved to the back of the ready queue,
+which adds overhead because it needs to get descheduled and then rescheduled,
+so the context needs to be saved and the thread needs to stop and restart.
+
+2A.2D:
+We can if we either have longer data types that do not overflow or if we use
+a time measurement bigger than nanoseconds.
+
+2A.3A:
+Because in this case, the program is sequential and will act similarly for all
+of the program types.
+
+2A.3B:
+Because each of the locks need to lock more often with a larger number of
+threads operating on them and thus will add more overhead.
+
+2A.3C:
+Because the spin lock is essentially a while loop that does nothing other than
+spin and just ends up wasting CPU cycles.

@@ -1,0 +1,33 @@
+My ip addr is: 131.179.0.187
+Reading input file...
+Connecting to: 164.67.194.240:5000
+Client-Server connection complete with AES256-SHA encryption
+Current settings: rate: 3, range: 4
+Sending message 'Heart rate of patient 131.179.0.187 is 72.72' to server...
+Received message 'Heart rate of patient 131.179.0.187 is 72.72' from server.
+
+Current settings: rate: 3, range: 4
+Sending message 'Heart rate of patient 131.179.0.187 is 69.16' to server...
+Received message 'Heart rate of patient 131.179.0.187 is 69.16' from server.
+
+Current settings: rate: 3, range: 4
+Sending message 'Heart rate of patient 131.179.0.187 is 72.26' to server...
+New rate 1 received from server.
+Received message 'Heart rate of patient 131.179.0.187 is 72.26 new_rate: 1' from server.
+
+Current settings: rate: 1, range: 4
+Sending message 'Heart rate of patient 131.179.0.187 is 72.39' to server...
+Received message 'Heart rate of patient 131.179.0.187 is 72.39' from server.
+
+Current settings: rate: 1, range: 4
+Sending message 'Heart rate of patient 131.179.0.187 is 73.29' to server...
+Received message 'Heart rate of patient 131.179.0.187 is 73.29' from server.
+
+Current settings: rate: 1, range: 4
+Sending message 'Heart rate of patient 131.179.0.187 is 67.58' to server...
+Received message 'Heart rate of patient 131.179.0.187 is 67.58' from server.
+
+Current settings: rate: 1, range: 4
+Sending message 'Heart rate of patient 131.179.0.187 is 68.68' to server...
+Received message 'Heart rate of patient 131.179.0.187 is 68.68' from server.
+

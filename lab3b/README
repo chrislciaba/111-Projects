@@ -1,0 +1,8 @@
+Christian Ciabattoni
+004331063
+
+The way you run this lab is by inputting the command
+
+$python lab3b.py
+
+And then it should output the file. My only concern is that the file provided in the spec for lab3b_check.txt doesn't appear to be sorted and thus would cause a diff to fail test cases.

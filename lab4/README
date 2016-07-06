@@ -1,0 +1,32 @@
+Christian Ciabattoni
+004331063
+
+DESCRIPTION OF CONTENTS
+Since I wasn’t entirely sure what source files we were supposed to include, I added my tls_client implementation since all of the other things remain unchanged from the original version.
+
+PART B:
+Lab4-B-1: The server appears to be running normally and is displaying the send and receive messages in the correct fashion. Currently there isn't much to be said about security other than that it is possible to sniff UDP connections which is a large security concern
+
+Lab4-B-2: This program dumbs a number of bits flowing over the network. In this context, it displays the exact output of the bits flowing over the network, which poses a major security concern since anyone could snoop on the network and view the text normally without decrypting anything
+
+Lab4-B-3: Once the set_rate command was executed, in one of the send/received segments a line got inserted specifying the new rate. The security implications of this are that if someone knows what port you are using for your execution they can manually set your rate.
+Christian Ciabattoni
+0043310063
+
+Lab4-B-4: This changes the rate to 15 when executed (and the output changes as specified above). The security implications are that if someone knows what port you're running on they can manipulate your rate in the middle of the process.
+
+PART D:
+Lab4-D-1: same output as the udp_client program. The security implications are not really apparent from this run, but it is nonetheless an encrypted network.
+
+Lab4-D-2: This also dumps the bits flowing over the network, but this time they are encrypted and thus show up as malformed packets. This shows that the TLS connection is much more secure since the data flowing over the network is encrypted and thus makes snooping much more difficult.
+
+Lab4-D-3: This output shows the problem with the program as some of the lines are mismatched with reads/writes. There are no security implications apparent from this.
+
+Lab4-D-4: This does nothing and the program keeps running smoothly. This shows that TLS is more secure than UDP and that it can’t be hacked easily.
+
+PART E:
+
+Q3: The TLS client reacts the way it is supposed to here and there is no mismatch. The rate simply changes and the lines stay matched the way they are supposed to be.
+
+Q4: The way it handles this is by having two threads, one that reads and the other that writes. That way the threads can have different numbers of reads and writes and still output the correct answer.
+
